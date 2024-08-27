@@ -1,50 +1,16 @@
-# React + TypeScript + Vite
+Rick and Morty API Web Application
+Overview
+This project focuses on developing a web application using React to explore characters from the "Rick and Morty" series. It utilizes the Rick and Morty API to fetch character data dynamically. Users can interact with an infinite scroll of characters and use features like sorting and filtering to locate their favorites efficiently.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Application Features
+Character Display: Display characters along with details such as name, status, species, and image in an infinitely scrolling view.
+Infinite Scrolling: Load and display more characters as the user scrolls down, replacing traditional pagination.
+Sorting: Users can sort characters by name, status, or species.
+Filtering: Implement filtering to view characters by specific criteria such as name, status, or species. This should include debounce techniques to optimize performance and enhance user experience. The search through filters will occur automatically as the user types, without the need to submit a search button, making the debounce implementation crucial for reducing excessive API calls.
+Detailed View: Clicking on a character card shows more detailed information in a modal or a dedicated component.
+Technical Requirements
+Axios: Use Axios for making HTTP requests to the Rick and Morty API.
+TanStack Router: Implement routing using TanStack Router for navigating between views.
+TanStack Query: Use TanStack Query for efficient data fetching, caching, and state management.
+Ant Design (AntD) or any other UI library of your choice: Use Ant Design components for building the UI.
+Debouncing: Apply debouncing techniques to filtering inputs to reduce the number of API requests made while typing.
