@@ -89,7 +89,12 @@ const CharacterList = ({
       </div>
       <Card bordered style={{ width: '100%', maxWidth: '1000px', padding: '20px', position: 'relative' }}>
         {status === 'loading' && <Spin />}
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+        <div style={{ 
+          margin: '20px',
+          display: 'flex', 
+          flexWrap: 'wrap', 
+          justifyContent: 'space-between' 
+          }}>
           {characters.map((character: Character) => (
             <CharacterCard
               key={character.id}
