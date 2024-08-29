@@ -1,21 +1,10 @@
 import { useState } from 'react';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { Layout } from 'antd';
-import axios from 'axios';
+import { fetchCharacters } from '../../api';
 import { Character } from '../types';
 import CharacterList from '../Character/CharacterList';
 import CharacterModal from '../Character/CharacterModal';
-
-const fetchCharacters = async ({ pageParam = 1, queryKey }) => {
-  const [_key, { filter, sort }] = queryKey;
-  let url = `https://rickandmortyapi.com/api/character?page=${pageParam}`;
-  
-  if (filter) {
-    url += `&name=${filter.name}&status=${filter.status}&species=${filter.species}`;
-  }
-  const response = await axios.get(url);
-  return response.data;
-};
 
 const HomeIndex = () => {
   const [filter, setFilter] = useState({ name: '', status: '', species: '' });
